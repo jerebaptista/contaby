@@ -1,0 +1,38 @@
+{
+  "Metadata": {
+    "title": "Contaby",
+    "description": "Contabilidade para MEI e Simples Nacional"
+  },
+  "HomePage": {
+    "title": "Contaby",
+    "subtitle": "Comece pelo cadastro da empresa e pelo resumo financeiro. Interface em português; código e rotas em inglês.",
+    "cta": "Área autenticada (em breve)"
+  },
+  "LocaleSwitcher": {
+    "label": "Idioma",
+    "pt-BR": "Português (Brasil)",
+    "en": "English"
+  },
+  "NotFoundPage": {
+    "message": "Página não encontrada.",
+    "home": "Início"
+  },
+  "ColorTheme": {
+    "label": "Cor do tema",
+    "themes": {
+      "neutral": "Neutro",
+      "blue": "Azul",
+      "green": "Verde",
+      "orange": "Laranja",
+      "red": "Vermelho",
+      "rose": "Rosa",
+      "violet": "Violeta",
+      "yellow": "Amarelo"
+    }
+  },
+  "Appearance": {
+    "light": "Tema claro",
+    "dark": "Tema escuro",
+    "system": "Sistema"
+  }
+}

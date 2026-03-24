@@ -1,0 +1,38 @@
+{
+  "Metadata": {
+    "title": "Contaby",
+    "description": "Accounting for MEI and Simples Nacional"
+  },
+  "HomePage": {
+    "title": "Contaby",
+    "subtitle": "Start with company onboarding and financial summary. UI copy is translated; code and routes stay in English.",
+    "cta": "Signed-in area (coming soon)"
+  },
+  "LocaleSwitcher": {
+    "label": "Language",
+    "pt-BR": "Portuguese (Brazil)",
+    "en": "English"
+  },
+  "NotFoundPage": {
+    "message": "Page not found.",
+    "home": "Home"
+  },
+  "ColorTheme": {
+    "label": "Theme color",
+    "themes": {
+      "neutral": "Neutral",
+      "blue": "Blue",
+      "green": "Green",
+      "orange": "Orange",
+      "red": "Red",
+      "rose": "Rose",
+      "violet": "Violet",
+      "yellow": "Yellow"
+    }
+  },
+  "Appearance": {
+    "light": "Light mode",
+    "dark": "Dark mode",
+    "system": "System"
+  }
+}
