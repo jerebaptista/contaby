@@ -6,9 +6,6 @@ import type { Metadata } from "next";
 import { cookies } from "next/headers";
 import "../globals.css";
 import { routing } from "@/i18n/routing";
-import { LocaleSwitcher } from "@/components/locale-switcher";
-import { ColorThemePicker } from "@/components/color-theme-picker";
-import { ModeToggle } from "@/components/mode-toggle";
 import { ThemeProviders } from "@/components/theme-providers";
 import {
   COLOR_THEME_COOKIE,
@@ -79,11 +76,6 @@ export default async function LocaleLayout({
       <body className="min-h-full flex flex-col font-sans">
         <ThemeProviders>
           <NextIntlClientProvider messages={messages}>
-            <header className="border-b bg-background px-4 py-3 flex flex-wrap items-center justify-end gap-3">
-              <ColorThemePicker initialTheme={initialColorTheme} />
-              <ModeToggle />
-              <LocaleSwitcher />
-            </header>
             {children}
           </NextIntlClientProvider>
         </ThemeProviders>

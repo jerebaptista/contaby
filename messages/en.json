@@ -34,5 +34,138 @@
     "light": "Light mode",
     "dark": "Dark mode",
     "system": "System"
+  },
+  "Dashboard": {
+    "header": {
+      "searchPlaceholder": "Search…",
+      "notifications": "Notifications",
+      "help": "Help",
+      "invite": "Invite",
+      "tooltips": {
+        "menu": "Open sidebar menu",
+        "toggleSidebar": "Collapse or expand sidebar",
+        "expandSidebar": "Expand Menu",
+        "collapseSidebar": "Collapse Menu",
+        "search": "Search the app",
+        "notifications": "Notifications",
+        "help": "Help center",
+        "invite": "Invite people",
+        "mode": "Toggle light or dark theme",
+        "account": "Account and preferences",
+        "company": "Company menu and tax ID"
+      }
+    },
+    "companyMenu": {
+      "companyData": "Registration details",
+      "copyCnpj": "Copy tax ID",
+      "cnpjCopiedToast": "Tax ID copied to clipboard",
+      "changePlan": "Change plan",
+      "billing": "Billing",
+      "notifications": "Notifications",
+      "settings": "Settings",
+      "switchCompany": "Switch company",
+      "newCompany": "New company",
+      "logout": "Log out"
+    },
+    "userMenu": {
+      "myAccount": "My account",
+      "logout": "Log out"
+    },
+    "fab": {
+      "chat": "Ask your accountant"
+    },
+    "nav": {
+      "emitInvoice": "Issue invoice",
+      "summary": "Summary",
+      "groups": {
+        "financial": "Financial",
+        "obligations": "Obligations",
+        "team": "Team",
+        "company": "Company"
+      },
+      "financial": {
+        "revenue": "Revenue",
+        "billing": "Billing",
+        "movements": "Movements",
+        "accounts": "Accounts"
+      },
+      "obligations": {
+        "taxes": "Taxes",
+        "declarations": "Declarations",
+        "pending": "Pending"
+      },
+      "team": {
+        "employees": "Employees",
+        "partners": "Partners"
+      },
+      "company": {
+        "registration": "Registration data",
+        "reports": "Reports",
+        "documents": "Documents",
+        "services": "Services"
+      }
+    },
+    "sidebarFooter": {
+      "help": "Help",
+      "invite": "Invite",
+      "upgrade": "Upgrade"
+    },
+    "home": {
+      "title": "Home",
+      "subtitle": "Company overview — mock data for development.",
+      "cards": {
+        "empty": "Content coming soon",
+        "revenue": {
+          "title": "Monthly revenue",
+          "description": "Gross revenue and comparison"
+        },
+        "taxes": {
+          "title": "Taxes due",
+          "description": "DAS and period obligations"
+        },
+        "obligations": {
+          "title": "Obligations",
+          "description": "Deadlines and status"
+        },
+        "cashflow": {
+          "title": "Cash flow",
+          "description": "Inflows and outflows"
+        },
+        "alerts": {
+          "title": "Alerts",
+          "description": "Items needing attention"
+        },
+        "recent": {
+          "title": "Recent activity",
+          "description": "Latest entries"
+        }
+      }
+    },
+    "emitInvoice": {
+      "title": "Issue invoice",
+      "subtitle": "Redirect to the official issuer (MVP).",
+      "cardTitle": "Simples Nacional",
+      "cardDescription": "Open the invoice issuer in a new tab.",
+      "hint": "Later we can record return data and invoice status here.",
+      "openEmitter": "Open issuer"
+    },
+    "placeholder": {
+      "body": "This section will be filled with real data in upcoming iterations.",
+      "titles": {
+        "financial_revenue": "Revenue",
+        "financial_billing": "Billing",
+        "financial_movements": "Movements",
+        "financial_accounts": "Accounts",
+        "obligations_taxes": "Taxes",
+        "obligations_declarations": "Declarations",
+        "obligations_pending": "Pending",
+        "team_employees": "Employees",
+        "team_partners": "Partners",
+        "company_registration": "Registration data",
+        "company_reports": "Reports",
+        "company_documents": "Documents",
+        "company_services": "Services"
+      }
+    }
   }
 }

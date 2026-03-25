@@ -34,5 +34,138 @@
     "light": "Tema claro",
     "dark": "Tema escuro",
     "system": "Sistema"
+  },
+  "Dashboard": {
+    "header": {
+      "searchPlaceholder": "Buscar…",
+      "notifications": "Notificações",
+      "help": "Ajuda",
+      "invite": "Convidar",
+      "tooltips": {
+        "menu": "Abrir menu lateral",
+        "toggleSidebar": "Recolher ou expandir menu lateral",
+        "expandSidebar": "Expandir Menu",
+        "collapseSidebar": "Recolher Menu",
+        "search": "Buscar no sistema",
+        "notifications": "Notificações",
+        "help": "Central de ajuda",
+        "invite": "Convidar pessoas",
+        "mode": "Alternar tema claro ou escuro",
+        "account": "Minha conta e preferências",
+        "company": "Menu da empresa e CNPJ"
+      }
+    },
+    "companyMenu": {
+      "companyData": "Dados cadastrais",
+      "copyCnpj": "Copiar CNPJ",
+      "cnpjCopiedToast": "CNPJ copiado para a área de transferência",
+      "changePlan": "Mudar de plano",
+      "billing": "Cobrança",
+      "notifications": "Notificações",
+      "settings": "Configurações",
+      "switchCompany": "Trocar empresa",
+      "newCompany": "Nova empresa",
+      "logout": "Sair"
+    },
+    "userMenu": {
+      "myAccount": "Minha conta",
+      "logout": "Sair"
+    },
+    "fab": {
+      "chat": "Perguntar pro contador"
+    },
+    "nav": {
+      "emitInvoice": "Emitir NF",
+      "summary": "Resumo",
+      "groups": {
+        "financial": "Financeiro",
+        "obligations": "Obrigações",
+        "team": "Equipe",
+        "company": "Empresa"
+      },
+      "financial": {
+        "revenue": "Faturamento",
+        "billing": "Cobrança",
+        "movements": "Movimentações",
+        "accounts": "Contas"
+      },
+      "obligations": {
+        "taxes": "Impostos",
+        "declarations": "Declarações",
+        "pending": "Pendências"
+      },
+      "team": {
+        "employees": "Funcionários",
+        "partners": "Sócios"
+      },
+      "company": {
+        "registration": "Dados cadastrais",
+        "reports": "Relatórios",
+        "documents": "Documentos",
+        "services": "Serviços"
+      }
+    },
+    "sidebarFooter": {
+      "help": "Ajuda",
+      "invite": "Convidar",
+      "upgrade": "Upgrade"
+    },
+    "home": {
+      "title": "Início",
+      "subtitle": "Resumo da sua empresa — dados mockados para desenvolvimento.",
+      "cards": {
+        "empty": "Conteúdo em breve",
+        "revenue": {
+          "title": "Faturamento do mês",
+          "description": "Receita bruta e comparativo"
+        },
+        "taxes": {
+          "title": "Impostos a pagar",
+          "description": "DAS e obrigações do período"
+        },
+        "obligations": {
+          "title": "Obrigações",
+          "description": "Prazos e status"
+        },
+        "cashflow": {
+          "title": "Fluxo de caixa",
+          "description": "Entradas e saídas"
+        },
+        "alerts": {
+          "title": "Alertas",
+          "description": "Itens que precisam de atenção"
+        },
+        "recent": {
+          "title": "Atividade recente",
+          "description": "Últimos lançamentos"
+        }
+      }
+    },
+    "emitInvoice": {
+      "title": "Emitir nota fiscal",
+      "subtitle": "Redirecionamento para o emissor oficial (MVP).",
+      "cardTitle": "Simples Nacional",
+      "cardDescription": "Abra o emissor de notas em uma nova aba.",
+      "hint": "Em produção, podemos registrar o retorno e o status da nota aqui.",
+      "openEmitter": "Abrir emissor"
+    },
+    "placeholder": {
+      "body": "Esta seção será preenchida com dados reais nas próximas iterações.",
+      "titles": {
+        "financial_revenue": "Faturamento",
+        "financial_billing": "Cobrança",
+        "financial_movements": "Movimentações",
+        "financial_accounts": "Contas",
+        "obligations_taxes": "Impostos",
+        "obligations_declarations": "Declarações",
+        "obligations_pending": "Pendências",
+        "team_employees": "Funcionários",
+        "team_partners": "Sócios",
+        "company_registration": "Dados cadastrais",
+        "company_reports": "Relatórios",
+        "company_documents": "Documentos",
+        "company_services": "Serviços"
+      }
+    }
   }
 }
