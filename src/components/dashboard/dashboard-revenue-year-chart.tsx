@@ -13,7 +13,7 @@ import {
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { PrimaryGradientArea } from "@/components/dashboard/chart-primary-area";
-import { formatCurrencyBRL } from "@/lib/format/currency";
+import { DashboardRevenueChartTooltip } from "@/components/dashboard/dashboard-revenue-chart-tooltip";
 import type { MonthlyRevenuePoint } from "@/lib/mocks/dashboard-revenue";
 
 const AXIS_LABEL_FONT_PX = 11;
@@ -124,12 +124,10 @@ export function DashboardRevenueYearChart({ series }: DashboardRevenueYearChartP
                   if (!row) return null;
                   const cents = Math.round(row.value * 100);
                   return (
-                    <div className="rounded-md border bg-popover px-2 py-1 text-xs shadow-md">
-                      <div className="text-muted-foreground">{row.monthLabel}</div>
-                      <div className="font-numeric font-medium tabular-nums">
-                        {formatCurrencyBRL(cents)}
-                      </div>
-                    </div>
+                    <DashboardRevenueChartTooltip
+                      monthLabel={row.monthLabel}
+                      valueCents={cents}
+                    />
                   );
                 }}
               />

@@ -1,7 +1,9 @@
 "use client";
 
 import * as React from "react";
+import { ChevronRight } from "lucide-react";
 import { useFormatter, useTranslations } from "next-intl";
+import { Link } from "@/i18n/navigation";
 import {
   AreaChart,
   ResponsiveContainer,
@@ -10,8 +12,10 @@ import {
   YAxis,
 } from "recharts";
 
+import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { PrimaryGradientArea } from "@/components/dashboard/chart-primary-area";
+import { DashboardRevenueChartTooltip } from "@/components/dashboard/dashboard-revenue-chart-tooltip";
 import { formatCurrencyBRL } from "@/lib/format/currency";
 import type { MonthlyRevenuePoint } from "@/lib/mocks/dashboard-revenue";
 import { percentChangeVsPreviousMonth } from "@/lib/mocks/dashboard-home";
@@ -31,8 +35,8 @@ export function DashboardRevenueCard({ series }: DashboardRevenueCardProps) {
   const chartData = React.useMemo(
     () =>
       series.map((p) => ({
-        label: format.dateTime(new Date(p.year, p.month - 1, 1), {
-          month: "short",
+        monthLabel: format.dateTime(new Date(p.year, p.month - 1, 1), {
+          month: "long",
         }),
         value: p.valueCents / 100,
       })),
@@ -61,10 +65,20 @@ export function DashboardRevenueCard({ series }: DashboardRevenueCardProps) {
 
   return (
     <Card className="gap-0 overflow-hidden py-0">
-      <CardHeader className="gap-0.5 pb-0 pt-4">
-        <CardTitle className="text-base font-medium">
+      <CardHeader className="flex flex-row items-start justify-between gap-2 space-y-0 pb-0 pt-4">
+        <CardTitle className="min-w-0 text-base font-medium">
           {t("monthTitle", { month: monthName })}
         </CardTitle>
+        <Button
+          variant="ghost"
+          size="icon-xs"
+          className="text-primary shrink-0"
+          asChild
+        >
+          <Link href="/financial/revenue" aria-label={t("ctaAria")}>
+            <ChevronRight className="size-4" />
+          </Link>
+        </Button>
       </CardHeader>
       <CardContent className="flex flex-col gap-1 px-4 pb-4 pt-4">
         <div className="space-y-0.5">
@@ -81,24 +95,22 @@ export function DashboardRevenueCard({ series }: DashboardRevenueCardProps) {
               data={chartData}
               margin={{ top: 8, right: 2, left: 0, bottom: 10 }}
             >
-              <XAxis dataKey="label" hide />
+              <XAxis dataKey="monthLabel" hide />
               <YAxis hide domain={yDomain} />
               <Tooltip
                 cursor={{ stroke: "var(--border)", strokeWidth: 0.5 }}
                 content={({ active, payload }) => {
                   if (!active || !payload?.length) return null;
                   const row = payload[0]?.payload as
-                    | { label: string; value: number }
+                    | { monthLabel: string; value: number }
                     | undefined;
                   if (!row) return null;
                   const cents = Math.round(row.value * 100);
                   return (
-                    <div className="rounded-md border bg-popover px-2 py-1 text-xs shadow-md">
-                      <div className="text-muted-foreground">{row.label}</div>
-                      <div className="font-numeric font-medium tabular-nums">
-                        {formatCurrencyBRL(cents)}
-                      </div>
-                    </div>
+                    <DashboardRevenueChartTooltip
+                      monthLabel={row.monthLabel}
+                      valueCents={cents}
+                    />
                   );
                 }}
               />

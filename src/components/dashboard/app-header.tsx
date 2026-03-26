@@ -23,7 +23,7 @@ export function AppHeader({ initialColorTheme }: AppHeaderProps) {
   const tt = useTranslations("Dashboard.header.tooltips");
 
   return (
-    <header className="flex h-14 shrink-0 items-center gap-3 border-b bg-background px-4">
+    <header className="sticky top-0 z-20 flex h-14 shrink-0 items-center gap-3 border-b bg-background px-4">
       <div className="flex min-w-0 max-w-md flex-1 items-center gap-2">
         <SidebarTriggerTooltip />
         <div className="relative min-w-0 flex-1">

@@ -1,4 +1,6 @@
 import { getTranslations, setRequestLocale } from "next-intl/server";
+import { Link } from "@/i18n/navigation";
+import { Button } from "@/components/ui/button";
 import { DashboardDeclarationsCard } from "@/components/dashboard/dashboard-declarations-card";
 import { DashboardMeiLimitCard } from "@/components/dashboard/dashboard-mei-limit-card";
 import { DashboardRevenueCard } from "@/components/dashboard/dashboard-revenue-card";
@@ -28,6 +30,7 @@ export default async function DashboardHomePage({ params }: DashboardHomeProps) 
   const { locale } = await params;
   setRequestLocale(locale);
   const t = await getTranslations("Dashboard.home");
+  const tNav = await getTranslations("Dashboard.nav");
 
   const cardIds = ["cashflow", "alerts", "recent"] as const;
 
@@ -43,10 +46,17 @@ export default async function DashboardHomePage({ params }: DashboardHomeProps) 
 
   return (
     <div className="space-y-6">
-      <div>
+      <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between sm:gap-4">
         <h1 className="text-2xl font-semibold tracking-tight">
           {t("greeting", { name: firstName })}
         </h1>
+        <Button
+          size="lg"
+          className="w-full shrink-0 bg-primary text-primary-foreground hover:bg-primary/90 hover:text-primary-foreground sm:w-auto"
+          asChild
+        >
+          <Link href="/emit-invoice">{tNav("emitInvoice")}</Link>
+        </Button>
       </div>
 
       <div className="grid gap-4 lg:grid-cols-3">

@@ -77,15 +77,29 @@ export function DashboardTaxesCard({ taxes }: DashboardTaxesCardProps) {
                   })}
                 />
                 <div className="min-w-0 flex-1 space-y-0.5">
-                  <p className="text-sm leading-snug">{t(`items.${tax.nameKey}`)}</p>
-                  <p className="text-muted-foreground text-xs">
+                  <p
+                    className={cn(
+                      "text-sm leading-snug",
+                      paid && "text-muted-foreground opacity-65",
+                    )}
+                  >
+                    {t(`items.${tax.nameKey}`)}
+                  </p>
+                  <p
+                    className={cn(
+                      "text-xs",
+                      paid
+                        ? "text-muted-foreground opacity-50"
+                        : "text-muted-foreground",
+                    )}
+                  >
                     {t("dueLabel", { date: formatDue(tax.dueDate) })}
                   </p>
                 </div>
                 <span
                   className={cn(
                     "font-numeric shrink-0 text-sm font-medium",
-                    paid && "text-muted-foreground line-through",
+                    paid && "text-muted-foreground line-through opacity-65",
                   )}
                 >
                   {formatMoney(tax.amountCents)}

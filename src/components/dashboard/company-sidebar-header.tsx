@@ -105,7 +105,7 @@ export function CompanySidebarHeader() {
   }
 
   return (
-    <div className="flex flex-col gap-1 border-b border-sidebar-border px-2 py-2">
+    <div className="flex flex-col gap-1 px-2 py-2">
       <DropdownMenu>
         <Tooltip open={collapsed && !isMobile ? undefined : false}>
           <TooltipTrigger asChild>
