@@ -71,6 +71,33 @@
       "myAccount": "Minha conta",
       "logout": "Sair"
     },
+    "meiDas": {
+      "pageTitle": "Impostos",
+      "pageSubtitle": "Referências para MEI. Simples Nacional será adicionado depois.",
+      "estimatorTitle": "Sugestão de DAS (MEI)",
+      "estimatorDescription": "Parcelas do DAS incidentes sobre o salário mínimo vigente. Enquanto estiver enquadrado no MEI e abaixo do teto, o valor mensal não varia com o faturamento.",
+      "activityLabel": "Tipo de atividade",
+      "activities": {
+        "commerce": "Comércio",
+        "services": "Serviços",
+        "industry": "Indústria",
+        "commerce_services": "Comércio e serviços"
+      },
+      "annualRevenueLabel": "Faturamento bruto acumulado no ano (opcional)",
+      "annualRevenuePlaceholder": "Ex.: 72000",
+      "annualRevenueHint": "Usado só para avisar se ultrapassar o teto do MEI ({cap}).",
+      "minimumWageNote": "Base: salário mínimo de {amount} (referência {ref}).",
+      "lines": {
+        "inss": "INSS (5% do salário mínimo)",
+        "icms": "ICMS (1% do salário mínimo)",
+        "iss": "ISS (5% do salário mínimo)",
+        "ipi": "IPI (0,5% do salário mínimo)"
+      },
+      "totalLabel": "Total sugerido (mês)",
+      "warnOverCapTitle": "Atenção ao teto do MEI",
+      "warnOverCapDescription": "O valor informado ultrapassa o teto anual de referência. Enquadramento e tributos precisam ser conferidos com o contador.",
+      "disclaimer": "Simulação educativa: não substitui o DAS gerado no Portal do Empreendedor nem a orientação profissional. Atualize salário mínimo e teto no código quando a legislação mudar."
+    },
     "fab": {
       "chat": "Perguntar pro contador"
     },
@@ -111,8 +138,43 @@
       "upgrade": "Upgrade"
     },
     "home": {
-      "title": "Início",
-      "subtitle": "Resumo da sua empresa — dados mockados para desenvolvimento.",
+      "greeting": "Olá, {name}",
+      "revenueCard": {
+        "monthTitle": "Faturamento de {month}",
+        "deltaUp": "+ {value}% ao mês anterior",
+        "deltaDown": "− {value}% ao mês anterior",
+        "ctaAria": "Abrir faturamento"
+      },
+      "meiLimitCard": {
+        "title": "Limite mensal",
+        "used": "Usado: {value}",
+        "limit": "{value}"
+      },
+      "taxesCard": {
+        "title": "Impostos a pagar",
+        "subtitle": "Valores previstos",
+        "dueLabel": "venc.: {date}",
+        "togglePaid": "Marcar pago: {name}",
+        "ctaAria": "Abrir impostos",
+        "items": {
+          "dasMei": "DAS MEI",
+          "issMunicipal": "ISS (municipal)",
+          "licenseFee": "Taxa de licença / alvará"
+        }
+      },
+      "declarationsCard": {
+        "title": "Declarações",
+        "subtitle": "Envie os documentos",
+        "dueLabel": "até {date}",
+        "ctaAria": "Abrir declarações",
+        "items": {
+          "dasnSimei": "DASN-SIMEI",
+          "annualRevenueDecl": "Declaração de faturamento anual"
+        }
+      },
+      "yearChart": {
+        "title": "Faturamento {year}"
+      },
       "cards": {
         "empty": "Conteúdo em breve",
         "revenue": {

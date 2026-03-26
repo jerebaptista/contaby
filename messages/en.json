@@ -71,6 +71,33 @@
       "myAccount": "My account",
       "logout": "Log out"
     },
+    "meiDas": {
+      "pageTitle": "Taxes",
+      "pageSubtitle": "MEI references. Simples Nacional will be added later.",
+      "estimatorTitle": "Suggested MEI DAS",
+      "estimatorDescription": "DAS components charged on the current minimum wage. While you remain within MEI limits and below the annual cap, the monthly amount does not vary with revenue.",
+      "activityLabel": "Activity type",
+      "activities": {
+        "commerce": "Retail / commerce",
+        "services": "Services",
+        "industry": "Industry",
+        "commerce_services": "Commerce and services"
+      },
+      "annualRevenueLabel": "Year-to-date gross revenue (optional)",
+      "annualRevenuePlaceholder": "e.g. 72000",
+      "annualRevenueHint": "Only used to warn if you exceed the MEI annual cap ({cap}).",
+      "minimumWageNote": "Basis: minimum wage {amount} (reference {ref}).",
+      "lines": {
+        "inss": "Social security (5% of minimum wage)",
+        "icms": "ICMS (1% of minimum wage)",
+        "iss": "ISS (5% of minimum wage)",
+        "ipi": "IPI (0.5% of minimum wage)"
+      },
+      "totalLabel": "Suggested monthly total",
+      "warnOverCapTitle": "MEI revenue cap",
+      "warnOverCapDescription": "The amount entered exceeds the reference annual cap. Classification and taxes must be confirmed with your accountant.",
+      "disclaimer": "Educational simulation only: does not replace the DAS issued by the official portal or professional advice. Update minimum wage and cap in code when regulations change."
+    },
     "fab": {
       "chat": "Ask your accountant"
     },
@@ -111,8 +138,43 @@
       "upgrade": "Upgrade"
     },
     "home": {
-      "title": "Home",
-      "subtitle": "Company overview — mock data for development.",
+      "greeting": "Hi, {name}",
+      "revenueCard": {
+        "monthTitle": "Revenue for {month}",
+        "deltaUp": "+ {value}% vs. previous month",
+        "deltaDown": "− {value}% vs. previous month",
+        "ctaAria": "Open revenue"
+      },
+      "meiLimitCard": {
+        "title": "Monthly cap",
+        "used": "Used: {value}",
+        "limit": "{value}"
+      },
+      "taxesCard": {
+        "title": "Taxes due",
+        "subtitle": "Estimated amounts",
+        "dueLabel": "due: {date}",
+        "togglePaid": "Mark paid: {name}",
+        "ctaAria": "Open taxes",
+        "items": {
+          "dasMei": "MEI DAS",
+          "issMunicipal": "ISS (municipal)",
+          "licenseFee": "License / permit fee"
+        }
+      },
+      "declarationsCard": {
+        "title": "Filings",
+        "subtitle": "Upload documents",
+        "dueLabel": "by {date}",
+        "ctaAria": "Open filings",
+        "items": {
+          "dasnSimei": "DASN-SIMEI",
+          "annualRevenueDecl": "Annual revenue declaration"
+        }
+      },
+      "yearChart": {
+        "title": "Revenue {year}"
+      },
       "cards": {
         "empty": "Content coming soon",
         "revenue": {

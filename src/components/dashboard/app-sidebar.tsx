@@ -59,7 +59,7 @@ export function AppSidebar() {
                 <SidebarMenuButton
                   asChild
                   tooltip={t("emitInvoice")}
-                  className="bg-sidebar-primary text-sidebar-primary-foreground hover:bg-sidebar-primary/90 hover:text-sidebar-primary-foreground"
+                  className="bg-primary text-primary-foreground hover:bg-primary/90 hover:text-primary-foreground"
                 >
                   <Link href="/emit-invoice">
                     <Receipt />

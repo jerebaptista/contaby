@@ -1,9 +1,12 @@
+export type CompanyRegime = "mei" | "simples_nacional";
+
 export type MockCompany = {
   id: string;
   legalName: string;
   tradeName: string;
   cnpjDigits: string;
   logoUrl: string | null;
+  regime: CompanyRegime;
 };
 
 export type MockUser = {
@@ -20,6 +23,7 @@ export const mockCompany: MockCompany = {
   tradeName: "Contaby Contabilidade",
   cnpjDigits: "12345678000199",
   logoUrl: null,
+  regime: "mei",
 };
 
 export const mockUser: MockUser = {
@@ -37,6 +41,7 @@ export const mockCompanies: MockCompany[] = [
     tradeName: "Pão Dourado",
     cnpjDigits: "98765432000188",
     logoUrl: null,
+    regime: "mei",
   },
 ];
 

@@ -60,3 +60,10 @@
     @apply font-sans;
   }
 }
+
+@layer utilities {
+  /** Alinhamento de dígitos; usa a mesma fonte do texto (sem família monoespaçada). */
+  .font-numeric {
+    @apply tabular-nums;
+  }
+}

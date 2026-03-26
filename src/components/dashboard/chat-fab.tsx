@@ -19,7 +19,7 @@ export function ChatFab() {
           type="button"
           size="icon"
           variant="default"
-          className="fixed bottom-[max(1.5rem,env(safe-area-inset-bottom))] right-[max(1.5rem,env(safe-area-inset-right))] z-50 size-12 rounded-full shadow-lg"
+          className="fixed bottom-[max(1.5rem,env(safe-area-inset-bottom))] right-[max(1.5rem,env(safe-area-inset-right))] z-50 size-12 rounded-full bg-primary text-primary-foreground shadow-lg hover:bg-primary/90 hover:text-primary-foreground"
           aria-label={t("chat")}
         >
           <MessageCircle className="size-6" aria-hidden />
