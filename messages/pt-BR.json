@@ -37,7 +37,7 @@
   },
   "Dashboard": {
     "header": {
-      "searchPlaceholder": "Buscar…",
+      "searchPlaceholder": "Buscar informação ou serviço",
       "notifications": "Notificações",
       "help": "Ajuda",
       "invite": "Convidar",
@@ -46,17 +46,17 @@
         "toggleSidebar": "Recolher ou expandir menu lateral",
         "expandSidebar": "Expandir Menu",
         "collapseSidebar": "Recolher Menu",
-        "search": "Buscar no sistema",
+        "search": "Buscar",
         "notifications": "Notificações",
         "help": "Central de ajuda",
         "invite": "Convidar pessoas",
         "mode": "Alternar tema claro ou escuro",
         "account": "Minha conta e preferências",
-        "company": "Menu da empresa e CNPJ"
+        "company": "Menu da empresa"
       }
     },
     "companyMenu": {
-      "companyData": "Dados cadastrais",
+      "companyData": "Perfil da empresa",
       "copyCnpj": "Copiar CNPJ",
       "cnpjCopiedToast": "CNPJ copiado para a área de transferência",
       "changePlan": "Mudar de plano",
@@ -103,6 +103,7 @@
     },
     "nav": {
       "emitInvoice": "Emitir NF",
+      "emitInvoiceShortcutKeys": "Ctrl + Shift + O",
       "summary": "Resumo",
       "groups": {
         "financial": "Financeiro",
@@ -112,9 +113,9 @@
       },
       "financial": {
         "revenue": "Faturamento",
-        "billing": "Cobrança",
         "movements": "Movimentações",
-        "accounts": "Contas"
+        "accounts": "Contas",
+        "clients": "Clientes"
       },
       "obligations": {
         "taxes": "Impostos",
@@ -126,7 +127,7 @@
         "partners": "Sócios"
       },
       "company": {
-        "registration": "Dados cadastrais",
+        "registration": "Perfil",
         "reports": "Relatórios",
         "documents": "Documentos",
         "services": "Serviços"
@@ -174,33 +175,6 @@
       },
       "yearChart": {
         "title": "Faturamento {year}"
-      },
-      "cards": {
-        "empty": "Conteúdo em breve",
-        "revenue": {
-          "title": "Faturamento do mês",
-          "description": "Receita bruta e comparativo"
-        },
-        "taxes": {
-          "title": "Impostos a pagar",
-          "description": "DAS e obrigações do período"
-        },
-        "obligations": {
-          "title": "Obrigações",
-          "description": "Prazos e status"
-        },
-        "cashflow": {
-          "title": "Fluxo de caixa",
-          "description": "Entradas e saídas"
-        },
-        "alerts": {
-          "title": "Alertas",
-          "description": "Itens que precisam de atenção"
-        },
-        "recent": {
-          "title": "Atividade recente",
-          "description": "Últimos lançamentos"
-        }
       }
     },
     "emitInvoice": {
@@ -211,19 +185,123 @@
       "hint": "Em produção, podemos registrar o retorno e o status da nota aqui.",
       "openEmitter": "Abrir emissor"
     },
+    "invoices": {
+      "title": "Faturamento",
+      "subtitle": "Notas fiscais de serviço emitidas.",
+      "searchPlaceholder": "Buscar por razão social ou CNPJ…",
+      "sendInvoice": "Enviar NF",
+      "emitInvoice": "Emitir NF",
+      "empty": "Nenhuma nota encontrada.",
+      "actionSoon": "Em breve.",
+      "view": "Visualizar",
+      "download": "Baixar",
+      "columns": {
+        "number": "Número",
+        "tomador": "Tomador",
+        "service": "Serviço",
+        "discrimination": "Discriminação",
+        "total": "Valor total",
+        "issuedAt": "Emissão",
+        "actions": "Ações"
+      }
+    },
+    "movements": {
+      "title": "Movimentações",
+      "subtitle": "Lançamentos por conta e categoria.",
+      "accountsCta": "Contas",
+      "sendStatement": "Enviar extrato",
+      "empty": "Nenhuma movimentação encontrada.",
+      "edit": "Editar",
+      "actionSoon": "Em breve.",
+      "columns": {
+        "date": "Data",
+        "amount": "Valor",
+        "description": "Descrição",
+        "category": "Categoria",
+        "account": "Conta",
+        "actions": "Ações"
+      },
+      "categories": {
+        "taxes": "Impostos",
+        "transfer": "Transferência",
+        "groceries": "Mercado",
+        "purchases": "Compras",
+        "bills": "Contas",
+        "services": "Serviços"
+      },
+      "filters": {
+        "search": "Buscar",
+        "searchPlaceholder": "Descrição ou valor…",
+        "period": "Período",
+        "periodPlaceholder": "Selecionar datas",
+        "clearPeriod": "Limpar período",
+        "category": "Categoria",
+        "account": "Conta",
+        "allCategories": "Todas as categorias",
+        "allAccounts": "Todas as contas"
+      }
+    },
+    "accounts": {
+      "title": "Contas",
+      "subtitle": "Contas bancárias e cartões cadastrados.",
+      "banksTitle": "Contas",
+      "cardsTitle": "Cartões",
+      "add": "Adicionar",
+      "edit": "Editar",
+      "actionSoon": "Em breve.",
+      "finalDigits": "Final {digits}",
+      "columns": {
+        "actions": "Ações"
+      },
+      "bankColumns": {
+        "bankName": "Banco",
+        "code": "Código",
+        "agency": "Agência",
+        "account": "Conta",
+        "pixKey": "Chave Pix"
+      },
+      "cardColumns": {
+        "brand": "Cartão",
+        "number": "Número",
+        "expiry": "Vencimento"
+      }
+    },
+    "clients": {
+      "title": "Clientes",
+      "subtitle": "Tomadores de serviço e faturamento com notas emitidas.",
+      "add": "Adicionar",
+      "edit": "Editar",
+      "viewInvoices": "Ver notas",
+      "empty": "Nenhum cliente encontrado.",
+      "actionSoon": "Em breve.",
+      "filters": {
+        "search": "Buscar",
+        "searchPlaceholder": "Nome, razão social, CNPJ, telefone ou e-mail…"
+      },
+      "columns": {
+        "tradeName": "Nome",
+        "legalName": "Razão social",
+        "cnpj": "CNPJ",
+        "address": "Endereço",
+        "phone": "Telefone",
+        "email": "E-mail",
+        "revenue": "Faturamento",
+        "actions": "Ações"
+      }
+    },
     "placeholder": {
       "body": "Esta seção será preenchida com dados reais nas próximas iterações.",
       "titles": {
         "financial_revenue": "Faturamento",
-        "financial_billing": "Cobrança",
         "financial_movements": "Movimentações",
         "financial_accounts": "Contas",
+        "financial_clients": "Clientes",
         "obligations_taxes": "Impostos",
         "obligations_declarations": "Declarações",
         "obligations_pending": "Pendências",
         "team_employees": "Funcionários",
         "team_partners": "Sócios",
-        "company_registration": "Dados cadastrais",
+        "company_registration": "Perfil",
         "company_reports": "Relatórios",
         "company_documents": "Documentos",
         "company_services": "Serviços"

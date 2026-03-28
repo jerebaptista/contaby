@@ -1,9 +1,9 @@
 /** English URL segments; labels come from i18n. */
 export const DASHBOARD_SECTION_PATHS = [
   "financial/revenue",
-  "financial/billing",
   "financial/movements",
   "financial/accounts",
+  "financial/clients",
   "obligations/taxes",
   "obligations/declarations",
   "obligations/pending",

@@ -21,7 +21,7 @@ export function SidebarTriggerTooltip() {
   return (
     <Tooltip>
       <TooltipTrigger asChild>
-        <SidebarTrigger aria-label={label} />
+        <SidebarTrigger aria-label={label} size="icon" />
       </TooltipTrigger>
       <TooltipContent side="bottom">{label}</TooltipContent>
     </Tooltip>

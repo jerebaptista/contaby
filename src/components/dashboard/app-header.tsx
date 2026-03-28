@@ -1,5 +1,6 @@
 "use client";
 
+import * as React from "react";
 import { Bell, HelpCircle, Search, UserPlus } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { Button } from "@/components/ui/button";
@@ -9,43 +10,50 @@ import {
   TooltipContent,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
-import type { ColorThemeId } from "@/config/color-themes";
 import { ModeToggleHeader } from "@/components/dashboard/mode-toggle-header";
 import { SidebarTriggerTooltip } from "@/components/dashboard/sidebar-trigger-tooltip";
-import { UserMenuHeader } from "@/components/dashboard/user-menu-header";
 
-type AppHeaderProps = {
-  initialColorTheme: ColorThemeId;
-};
-
-export function AppHeader({ initialColorTheme }: AppHeaderProps) {
+export function AppHeader() {
   const t = useTranslations("Dashboard.header");
   const tt = useTranslations("Dashboard.header.tooltips");
+  const searchInputRef = React.useRef<HTMLInputElement>(null);
 
   return (
     <header className="sticky top-0 z-20 flex h-14 shrink-0 items-center gap-3 border-b bg-background px-4">
       <div className="flex min-w-0 max-w-md flex-1 items-center gap-2">
         <SidebarTriggerTooltip />
         <div className="relative min-w-0 flex-1">
-          <Search
-            className="pointer-events-none absolute left-2.5 top-1/2 size-4 -translate-y-1/2 text-muted-foreground"
-            aria-hidden
-          />
           <Input
+            ref={searchInputRef}
             type="search"
             placeholder={t("searchPlaceholder")}
-            className="h-9 pl-9"
+            className="h-9 min-w-0 w-full pr-10"
             aria-label={t("searchPlaceholder")}
           />
+          <Tooltip>
+            <TooltipTrigger asChild>
+              <Button
+                type="button"
+                variant="ghost"
+                size="icon"
+                className="absolute top-1/2 right-0.5 -translate-y-1/2 shrink-0"
+                aria-label={tt("search")}
+                onClick={() => searchInputRef.current?.focus()}
+              >
+                <Search className="size-4" aria-hidden />
+              </Button>
+            </TooltipTrigger>
+            <TooltipContent side="bottom">{tt("search")}</TooltipContent>
+          </Tooltip>
         </div>
       </div>
-      <div className="ml-auto flex items-center gap-0.5">
+      <div className="ml-auto flex items-center gap-1">
         <Tooltip>
           <TooltipTrigger asChild>
             <Button
               type="button"
               variant="ghost"
-              size="icon-sm"
+              size="icon"
               aria-label={t("notifications")}
             >
               <Bell className="size-4" />
@@ -58,7 +66,7 @@ export function AppHeader({ initialColorTheme }: AppHeaderProps) {
             <Button
               type="button"
               variant="ghost"
-              size="icon-sm"
+              size="icon"
               aria-label={t("help")}
             >
               <HelpCircle className="size-4" />
@@ -71,7 +79,7 @@ export function AppHeader({ initialColorTheme }: AppHeaderProps) {
             <Button
               type="button"
               variant="ghost"
-              size="icon-sm"
+              size="icon"
               aria-label={t("invite")}
             >
               <UserPlus className="size-4" />
@@ -80,7 +88,6 @@ export function AppHeader({ initialColorTheme }: AppHeaderProps) {
           <TooltipContent side="bottom">{tt("invite")}</TooltipContent>
         </Tooltip>
         <ModeToggleHeader />
-        <UserMenuHeader initialColorTheme={initialColorTheme} />
       </div>
     </header>
   );

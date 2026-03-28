@@ -60,6 +60,7 @@ function digitsOnlyCnpj(cnpjDigits: string) {
 
 export function CompanySidebarHeader() {
   const t = useTranslations("Dashboard.companyMenu");
+  const tMeta = useTranslations("Metadata");
   const tt = useTranslations("Dashboard.header.tooltips");
   const { state, isMobile } = useSidebar();
   const collapsed = state === "collapsed";
@@ -81,7 +82,7 @@ export function CompanySidebarHeader() {
     }
   }, [active.id]);
 
-  const companyTooltip = `${active.tradeName} · ${formatCnpj(active.cnpjDigits)}`;
+  const companyTooltip = `${tMeta("title")} · ${active.tradeName}`;
 
   function handleCopyCnpj(e: React.MouseEvent) {
     e.preventDefault();
@@ -113,14 +114,18 @@ export function CompanySidebarHeader() {
               <Button
                 variant="ghost"
                 className={cn(
-                  "h-auto w-full gap-2 py-1.5 text-left hover:bg-sidebar-accent",
+                  "h-auto min-h-11 w-full items-center gap-2 py-2 text-left hover:bg-sidebar-accent",
                   collapsed ? "justify-center px-0" : "justify-start px-1.5",
                 )}
                 aria-label={tt("company")}
               >
-                <Avatar className="size-8 rounded-md" size="default">
+                <Avatar className="size-8 shrink-0 overflow-hidden rounded-md after:hidden">
                   {active.logoUrl ? (
-                    <AvatarImage src={active.logoUrl} alt="" />
+                    <AvatarImage
+                      src={active.logoUrl}
+                      alt=""
+                      className="rounded-md"
+                    />
                   ) : null}
                   <AvatarFallback className="rounded-md text-[11px] font-medium">
                     {initials(active.tradeName)}
@@ -128,14 +133,9 @@ export function CompanySidebarHeader() {
                 </Avatar>
                 {!collapsed && (
                   <>
-                    <div className="min-w-0 flex-1 text-left leading-tight">
-                      <p className="truncate text-[13px] font-medium text-sidebar-foreground">
-                        {active.tradeName}
-                      </p>
-                      <p className="truncate text-[11px] text-sidebar-foreground/70">
-                        {formatCnpj(active.cnpjDigits)}
-                      </p>
-                    </div>
+                    <span className="min-w-0 flex-1 truncate text-left text-base font-semibold leading-none text-sidebar-foreground">
+                      {tMeta("title")}
+                    </span>
                     <ChevronDown className="size-3.5 shrink-0 opacity-60" />
                   </>
                 )}

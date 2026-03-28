@@ -29,7 +29,7 @@ export function ModeToggleHeader() {
           <Button
             type="button"
             variant="ghost"
-            size="icon-sm"
+            size="icon"
             aria-label={tt("mode")}
           >
             <Sun className="size-4" aria-hidden />
@@ -49,7 +49,7 @@ export function ModeToggleHeader() {
         <Button
           type="button"
           variant="ghost"
-          size="icon-sm"
+          size="icon"
           onClick={() => setTheme(isDark ? "light" : "dark")}
           aria-label={label}
         >

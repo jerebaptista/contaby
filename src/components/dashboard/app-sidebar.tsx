@@ -10,15 +10,22 @@ import {
   LayoutDashboard,
   Receipt,
   Sparkles,
+  SquarePen,
   UserCircle,
   Users,
-  Wallet,
+  UsersRound,
 } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { Link, usePathname } from "@/i18n/navigation";
 import {
+  Tooltip,
+  TooltipContent,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
+import {
   Sidebar,
   SidebarContent,
+  SidebarFooter,
   SidebarGroup,
   SidebarGroupContent,
   SidebarGroupLabel,
@@ -27,8 +34,12 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
   SidebarRail,
+  useSidebar,
 } from "@/components/ui/sidebar";
+import type { ColorThemeId } from "@/config/color-themes";
 import { CompanySidebarHeader } from "@/components/dashboard/company-sidebar-header";
+import { cn } from "@/lib/utils";
+import { UserMenuSidebarFooter } from "@/components/dashboard/user-menu-sidebar-footer";
 
 function usePathActive() {
   const pathname = usePathname();
@@ -40,11 +51,16 @@ function usePathActive() {
   };
 }
 
-export function AppSidebar() {
+type AppSidebarProps = {
+  initialColorTheme: ColorThemeId;
+};
+
+export function AppSidebar({ initialColorTheme }: AppSidebarProps) {
   const t = useTranslations("Dashboard.nav");
   const tGroups = useTranslations("Dashboard.nav.groups");
   const tt = useTranslations("Dashboard.header.tooltips");
   const pathActive = usePathActive();
+  const { state, isMobile } = useSidebar();
 
   return (
     <Sidebar collapsible="icon">
@@ -52,25 +68,6 @@ export function AppSidebar() {
         <CompanySidebarHeader />
       </SidebarHeader>
       <SidebarContent>
-        <SidebarGroup>
-          <SidebarGroupContent>
-            <SidebarMenu>
-              <SidebarMenuItem>
-                <SidebarMenuButton
-                  asChild
-                  tooltip={t("emitInvoice")}
-                  className="bg-primary text-primary-foreground hover:bg-primary/90 hover:text-primary-foreground"
-                >
-                  <Link href="/emit-invoice">
-                    <Receipt />
-                    <span>{t("emitInvoice")}</span>
-                  </Link>
-                </SidebarMenuButton>
-              </SidebarMenuItem>
-            </SidebarMenu>
-          </SidebarGroupContent>
-        </SidebarGroup>
-
         <SidebarGroup>
           <SidebarGroupContent>
             <SidebarMenu>
@@ -85,6 +82,43 @@ export function AppSidebar() {
                     <span>{t("summary")}</span>
                   </Link>
                 </SidebarMenuButton>
+              </SidebarMenuItem>
+              <SidebarMenuItem>
+                <Tooltip>
+                  <TooltipTrigger asChild>
+                    <SidebarMenuButton
+                      asChild
+                      isActive={pathActive("/emit-invoice")}
+                    >
+                      <Link href="/emit-invoice">
+                        <SquarePen />
+                        <span className="flex min-w-0 flex-1 items-center gap-2 overflow-hidden">
+                          <span className="truncate">{t("emitInvoice")}</span>
+                          <span
+                            className={cn(
+                              "ml-auto shrink-0 text-xs font-medium text-muted-foreground",
+                              "opacity-0 transition-opacity duration-150",
+                              "group-hover/menu-button:opacity-100",
+                              "group-data-[collapsible=icon]:hidden",
+                            )}
+                          >
+                            {t("emitInvoiceShortcutKeys")}
+                          </span>
+                        </span>
+                      </Link>
+                    </SidebarMenuButton>
+                  </TooltipTrigger>
+                  <TooltipContent
+                    side="right"
+                    align="center"
+                    hidden={state !== "collapsed" || isMobile}
+                  >
+                    <span>{t("emitInvoice")}</span>{" "}
+                    <span className="font-medium text-muted-foreground">
+                      {t("emitInvoiceShortcutKeys")}
+                    </span>
+                  </TooltipContent>
+                </Tooltip>
               </SidebarMenuItem>
             </SidebarMenu>
           </SidebarGroupContent>
@@ -109,18 +143,6 @@ export function AppSidebar() {
               <SidebarMenuItem>
                 <SidebarMenuButton
                   asChild
-                  isActive={pathActive("/financial/billing")}
-                  tooltip={t("financial.billing")}
-                >
-                  <Link href="/financial/billing">
-                    <Wallet />
-                    <span>{t("financial.billing")}</span>
-                  </Link>
-                </SidebarMenuButton>
-              </SidebarMenuItem>
-              <SidebarMenuItem>
-                <SidebarMenuButton
-                  asChild
                   isActive={pathActive("/financial/movements")}
                   tooltip={t("financial.movements")}
                 >
@@ -139,6 +161,18 @@ export function AppSidebar() {
                   <Link href="/financial/accounts">
                     <Building2 />
                     <span>{t("financial.accounts")}</span>
+                  </Link>
+                </SidebarMenuButton>
+              </SidebarMenuItem>
+              <SidebarMenuItem>
+                <SidebarMenuButton
+                  asChild
+                  isActive={pathActive("/financial/clients")}
+                  tooltip={t("financial.clients")}
+                >
+                  <Link href="/financial/clients">
+                    <UsersRound />
+                    <span>{t("financial.clients")}</span>
                   </Link>
                 </SidebarMenuButton>
               </SidebarMenuItem>
@@ -278,6 +312,10 @@ export function AppSidebar() {
           </SidebarGroupContent>
         </SidebarGroup>
       </SidebarContent>
+
+      <SidebarFooter className="border-t border-sidebar-border p-0">
+        <UserMenuSidebarFooter initialColorTheme={initialColorTheme} />
+      </SidebarFooter>
 
       <SidebarRail
         tooltipExpand={tt("expandSidebar")}

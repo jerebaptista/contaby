@@ -4,7 +4,6 @@ import * as React from "react";
 import { ChevronRight } from "lucide-react";
 import { useFormatter, useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
-import { Button } from "@/components/ui/button";
 import {
   Card,
   CardContent,
@@ -46,16 +45,13 @@ export function DashboardTaxesCard({ taxes }: DashboardTaxesCardProps) {
           <CardTitle className="text-base font-medium">{t("title")}</CardTitle>
           <CardDescription>{t("subtitle")}</CardDescription>
         </div>
-        <Button
-          variant="ghost"
-          size="icon-xs"
-          className="text-primary shrink-0"
-          asChild
+        <Link
+          href="/obligations/taxes"
+          className="text-primary hover:bg-accent inline-flex size-8 shrink-0 items-center justify-center rounded-md"
+          aria-label={t("ctaAria")}
         >
-          <Link href="/obligations/taxes" aria-label={t("ctaAria")}>
-            <ChevronRight className="size-4" />
-          </Link>
-        </Button>
+          <ChevronRight className="size-4" />
+        </Link>
       </CardHeader>
       <CardContent className="flex flex-1 flex-col gap-3">
         <ul className="space-y-3">

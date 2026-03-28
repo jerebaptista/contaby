@@ -7,13 +7,6 @@ import { DashboardRevenueCard } from "@/components/dashboard/dashboard-revenue-c
 import { DashboardRevenueYearChart } from "@/components/dashboard/dashboard-revenue-year-chart";
 import { DashboardTaxesCard } from "@/components/dashboard/dashboard-taxes-card";
 import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
-import {
   getMockRevenueCurrentYear,
   getMockRevenueLastSixMonths,
   MEI_DASHBOARD_DECLARATIONS,
@@ -31,8 +24,6 @@ export default async function DashboardHomePage({ params }: DashboardHomeProps) 
   setRequestLocale(locale);
   const t = await getTranslations("Dashboard.home");
   const tNav = await getTranslations("Dashboard.nav");
-
-  const cardIds = ["cashflow", "alerts", "recent"] as const;
 
   const now = new Date();
   const revenueSix = getMockRevenueLastSixMonths(now);
@@ -74,22 +65,6 @@ export default async function DashboardHomePage({ params }: DashboardHomeProps) 
       </div>
 
       <DashboardRevenueYearChart series={revenueYear} />
-
-      <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
-        {cardIds.map((id) => (
-          <Card key={id}>
-            <CardHeader>
-              <CardTitle className="text-base">{t(`cards.${id}.title`)}</CardTitle>
-              <CardDescription>{t(`cards.${id}.description`)}</CardDescription>
-            </CardHeader>
-            <CardContent>
-              <div className="bg-muted/40 flex min-h-[120px] items-center justify-center rounded-lg border border-dashed text-xs text-muted-foreground">
-                {t("cards.empty")}
-              </div>
-            </CardContent>
-          </Card>
-        ))}
-      </div>
     </div>
   );
 }

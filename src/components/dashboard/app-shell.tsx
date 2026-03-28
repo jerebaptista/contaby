@@ -10,6 +10,7 @@ import type { ColorThemeId } from "@/config/color-themes";
 import { AppHeader } from "@/components/dashboard/app-header";
 import { AppSidebar } from "@/components/dashboard/app-sidebar";
 import { ChatFab } from "@/components/dashboard/chat-fab";
+import { EmitInvoiceShortcut } from "@/components/dashboard/emit-invoice-shortcut";
 
 type AppShellProps = {
   children: ReactNode;
@@ -20,9 +21,10 @@ export function AppShell({ children, initialColorTheme }: AppShellProps) {
   return (
     <TooltipProvider delayDuration={0}>
       <SidebarProvider>
-        <AppSidebar />
+        <EmitInvoiceShortcut />
+        <AppSidebar initialColorTheme={initialColorTheme} />
         <SidebarInset>
-          <AppHeader initialColorTheme={initialColorTheme} />
+          <AppHeader />
           <div className="flex flex-1 flex-col gap-4 p-4 md:p-6">{children}</div>
           <ChatFab />
         </SidebarInset>

@@ -37,7 +37,7 @@
   },
   "Dashboard": {
     "header": {
-      "searchPlaceholder": "Search…",
+      "searchPlaceholder": "Search for information or service",
       "notifications": "Notifications",
       "help": "Help",
       "invite": "Invite",
@@ -46,17 +46,17 @@
         "toggleSidebar": "Collapse or expand sidebar",
         "expandSidebar": "Expand Menu",
         "collapseSidebar": "Collapse Menu",
-        "search": "Search the app",
+        "search": "Search",
         "notifications": "Notifications",
         "help": "Help center",
         "invite": "Invite people",
         "mode": "Toggle light or dark theme",
         "account": "Account and preferences",
-        "company": "Company menu and tax ID"
+        "company": "Company menu"
       }
     },
     "companyMenu": {
-      "companyData": "Registration details",
+      "companyData": "Company profile",
       "copyCnpj": "Copy tax ID",
       "cnpjCopiedToast": "Tax ID copied to clipboard",
       "changePlan": "Change plan",
@@ -103,6 +103,7 @@
     },
     "nav": {
       "emitInvoice": "Issue invoice",
+      "emitInvoiceShortcutKeys": "Ctrl + Shift + O",
       "summary": "Summary",
       "groups": {
         "financial": "Financial",
@@ -112,9 +113,9 @@
       },
       "financial": {
         "revenue": "Revenue",
-        "billing": "Billing",
         "movements": "Movements",
-        "accounts": "Accounts"
+        "accounts": "Accounts",
+        "clients": "Clients"
       },
       "obligations": {
         "taxes": "Taxes",
@@ -126,7 +127,7 @@
         "partners": "Partners"
       },
       "company": {
-        "registration": "Registration data",
+        "registration": "Profile",
         "reports": "Reports",
         "documents": "Documents",
         "services": "Services"
@@ -174,33 +175,6 @@
       },
       "yearChart": {
         "title": "Revenue {year}"
-      },
-      "cards": {
-        "empty": "Content coming soon",
-        "revenue": {
-          "title": "Monthly revenue",
-          "description": "Gross revenue and comparison"
-        },
-        "taxes": {
-          "title": "Taxes due",
-          "description": "DAS and period obligations"
-        },
-        "obligations": {
-          "title": "Obligations",
-          "description": "Deadlines and status"
-        },
-        "cashflow": {
-          "title": "Cash flow",
-          "description": "Inflows and outflows"
-        },
-        "alerts": {
-          "title": "Alerts",
-          "description": "Items needing attention"
-        },
-        "recent": {
-          "title": "Recent activity",
-          "description": "Latest entries"
-        }
       }
     },
     "emitInvoice": {
@@ -211,19 +185,123 @@
       "hint": "Later we can record return data and invoice status here.",
       "openEmitter": "Open issuer"
     },
+    "invoices": {
+      "title": "Revenue",
+      "subtitle": "Issued service invoices.",
+      "searchPlaceholder": "Search by legal name or tax ID…",
+      "sendInvoice": "Send invoice",
+      "emitInvoice": "Issue invoice",
+      "empty": "No invoices found.",
+      "actionSoon": "Coming soon.",
+      "view": "View",
+      "download": "Download",
+      "columns": {
+        "number": "Number",
+        "tomador": "Customer",
+        "service": "Service",
+        "discrimination": "Description",
+        "total": "Total",
+        "issuedAt": "Issued",
+        "actions": "Actions"
+      }
+    },
+    "movements": {
+      "title": "Movements",
+      "subtitle": "Entries by account and category.",
+      "accountsCta": "Accounts",
+      "sendStatement": "Send statement",
+      "empty": "No movements found.",
+      "edit": "Edit",
+      "actionSoon": "Coming soon.",
+      "columns": {
+        "date": "Date",
+        "amount": "Amount",
+        "description": "Description",
+        "category": "Category",
+        "account": "Account",
+        "actions": "Actions"
+      },
+      "categories": {
+        "taxes": "Taxes",
+        "transfer": "Transfer",
+        "groceries": "Groceries",
+        "purchases": "Purchases",
+        "bills": "Bills",
+        "services": "Services"
+      },
+      "filters": {
+        "search": "Search",
+        "searchPlaceholder": "Description or amount…",
+        "period": "Period",
+        "periodPlaceholder": "Select dates",
+        "clearPeriod": "Clear period",
+        "category": "Category",
+        "account": "Account",
+        "allCategories": "All categories",
+        "allAccounts": "All accounts"
+      }
+    },
+    "accounts": {
+      "title": "Accounts",
+      "subtitle": "Linked bank accounts and cards.",
+      "banksTitle": "Bank accounts",
+      "cardsTitle": "Cards",
+      "add": "Add",
+      "edit": "Edit",
+      "actionSoon": "Coming soon.",
+      "finalDigits": "Ending in {digits}",
+      "columns": {
+        "actions": "Actions"
+      },
+      "bankColumns": {
+        "bankName": "Bank",
+        "code": "Code",
+        "agency": "Branch",
+        "account": "Account",
+        "pixKey": "Pix key"
+      },
+      "cardColumns": {
+        "brand": "Card",
+        "number": "Number",
+        "expiry": "Expires"
+      }
+    },
+    "clients": {
+      "title": "Clients",
+      "subtitle": "Service recipients and revenue from issued invoices.",
+      "add": "Add",
+      "edit": "Edit",
+      "viewInvoices": "View invoices",
+      "empty": "No clients found.",
+      "actionSoon": "Coming soon.",
+      "filters": {
+        "search": "Search",
+        "searchPlaceholder": "Name, legal name, tax ID, phone, or email…"
+      },
+      "columns": {
+        "tradeName": "Name",
+        "legalName": "Legal name",
+        "cnpj": "Tax ID (CNPJ)",
+        "address": "Address",
+        "phone": "Phone",
+        "email": "Email",
+        "revenue": "Revenue",
+        "actions": "Actions"
+      }
+    },
     "placeholder": {
       "body": "This section will be filled with real data in upcoming iterations.",
       "titles": {
         "financial_revenue": "Revenue",
-        "financial_billing": "Billing",
         "financial_movements": "Movements",
         "financial_accounts": "Accounts",
+        "financial_clients": "Clients",
         "obligations_taxes": "Taxes",
         "obligations_declarations": "Declarations",
         "obligations_pending": "Pending",
         "team_employees": "Employees",
         "team_partners": "Partners",
-        "company_registration": "Registration data",
+        "company_registration": "Profile",
         "company_reports": "Reports",
         "company_documents": "Documents",
         "company_services": "Services"

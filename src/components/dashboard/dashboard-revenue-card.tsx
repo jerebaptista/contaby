@@ -12,7 +12,6 @@ import {
   YAxis,
 } from "recharts";
 
-import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { PrimaryGradientArea } from "@/components/dashboard/chart-primary-area";
 import { DashboardRevenueChartTooltip } from "@/components/dashboard/dashboard-revenue-chart-tooltip";
@@ -69,16 +68,13 @@ export function DashboardRevenueCard({ series }: DashboardRevenueCardProps) {
         <CardTitle className="min-w-0 text-base font-medium">
           {t("monthTitle", { month: monthName })}
         </CardTitle>
-        <Button
-          variant="ghost"
-          size="icon-xs"
-          className="text-primary shrink-0"
-          asChild
+        <Link
+          href="/financial/revenue"
+          className="text-primary hover:bg-accent inline-flex size-8 shrink-0 items-center justify-center rounded-md"
+          aria-label={t("ctaAria")}
         >
-          <Link href="/financial/revenue" aria-label={t("ctaAria")}>
-            <ChevronRight className="size-4" />
-          </Link>
-        </Button>
+          <ChevronRight className="size-4" />
+        </Link>
       </CardHeader>
       <CardContent className="flex flex-col gap-1 px-4 pb-4 pt-4">
         <div className="space-y-0.5">
